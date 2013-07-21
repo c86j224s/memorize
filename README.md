@@ -1,4 +1,4 @@
 memorize
 ========
 app for memorizing something.
-support by pythonanywhere
+hosted by pythonanywhere
