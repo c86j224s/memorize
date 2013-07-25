@@ -3,7 +3,7 @@
 
 from datetime import datetime, timedelta
 import uuid, json
-from timehelper import UtcDateTime
+import timehelper
 from kvstore import KVStore
 
 class UserAuthentication (object):
@@ -67,7 +67,7 @@ class UserAuthentication (object):
 
 		sessionid = self._new_sessionid ()
 		sessioninfo = {}
-		sessioninfo ["expire"] = (UtcDateTime (datetime.utcnow ()) + self.expire_duration).get_dict ()
+		sessioninfo ["expire"] = timehelper.serializeDateTimeToDict (datetime.utcnow () + timedelta (self.expire_duration))
 		sessioninfo ["sessionid"] = sessionid
 		self._set_session (email, sessionid, sessioninfo)
 
@@ -161,7 +161,8 @@ class UserAuthentication (object):
 		if not j:
 			return None
 
-		if UtcDateTime().parse (j.get ("expire")).get_datetime () < UtcDateTime ().get_datetime ():
+		
+		if timehelper.deserializeDictToDateTime (j.get ("expire")) < datetime.utcnow ():
 			self._del_session (email, sessionid)
 			return None
 

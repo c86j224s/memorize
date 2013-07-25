@@ -1,0 +1,28 @@
+﻿rebuild timehelper module
+
+ * remove UtcDateTime class
+ * add 2 helper methods ( serialize and desrialize between datetime and dict )
+ * add timehelper testcase
+ 
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   tests/timehelper_test.py
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   auth.py
+#	modified:   run_test.py
+#	modified:   tests/kvstorelocal_test.py
+#	modified:   timehelper.py
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	sandbox/
+

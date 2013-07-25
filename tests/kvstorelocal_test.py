@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import unittest, os, os.path, shutil
+import unittest, os, os.path, sys, shutil
 import kvstorelocal
 
 class KVStoreLocal_Test (unittest.TestCase):
@@ -52,8 +52,12 @@ class KVStoreLocal_Test (unittest.TestCase):
 	def test_binary (self):
 		k = u"this is a key string for binary value"
 		v = ""
-		with open ("/bin/bash", "rb") as f:
-			v = f.read ()
+		if sys.platform == "win32":
+			with open ("/windows/system32/notepad.exe", "rb") as f:
+				v = f.read ()
+		else:
+			with open ("/bin/bash", "rb") as f:
+				v = f.read ()
 		self.assertTrue (self.store.set_binary (k, v))
 		self.assertEqual (self.store.get_binary (k), v)
 
