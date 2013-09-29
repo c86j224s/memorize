@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello from Flask!'
+    return 'Hello from Flask! (20130929)' 
 
 @app.route('/about')
 def about ():
