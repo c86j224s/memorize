@@ -1,0 +1,11 @@
+{% block global_navigation %}
+
+	<ul class='global_navigation_list'>
+		{%- for endpoint, url, title in globalNavigation %}
+			<li class='global_navigation_item'>
+				<a href='{{ url }}'>{{ title }}</a>
+			</li>
+		{%- endfor %}
+	</ul>
+
+{% endblock %}

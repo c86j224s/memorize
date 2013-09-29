@@ -9,3 +9,10 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello from Flask!'
 
+@app.route('/about')
+def about ():
+	return render_template ('about.html',
+		globalNavigation=(
+			('http://www.google.com', 'Google!'), 
+			('http://www.naver.com', 'Naver!'),
+			('http://www.daum.net', 'Daum!')))

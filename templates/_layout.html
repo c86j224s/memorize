@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang='ko'>
+	<head>
+		<!-- meta information area -->
+
+		<meta charset='utf-8' />
+		<meta name='description' content='blah blah blah!' />
+		<meta name='author' content='jschoi' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title> {% block title%} {% endblock %} | welcome! </title>
+
+		<!-- css area -->
+
+		<!-- [if lt [IE9]>
+			<script src='{{ url_for ('static', filename='html5shiv/html5shiv.js') }} type='text/css' rel='stylesheet' />
+		<![endif] -->
+
+		<!-- js area -->
+
+		<script type='text/javascript' src='{{ url_for ('static', filename='jquery/jquery-1.9.1.min.js') }}'></script>
+		<script type='text/javascript' src='{{ url_for ('static', filename='jquery/plugin-deparam/jquery-deparam.min.js') }}'></script>
+	</head>
+	<body>
+
+		<div id='global_navigation'>
+			{% block global_navigation %}{% endblock %}
+		</div>
+
+		<div id='content'>
+			{% block content %}{% endblock %}
+		</div>
+
+		{% 
+	</body>
+</html>
