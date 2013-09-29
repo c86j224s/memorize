@@ -22,14 +22,16 @@
 	</head>
 	<body>
 
-		<div id='global_navigation'>
-			{% block global_navigation %}{% endblock %}
-		</div>
+		<div id='global_navigation'>{% block global_navigation %}
+				<ul id='global_navigation'>
+				{%- for url, title in globalNavigation %}
+					<li><a href='{{ url }}'>{{ title }}</a></li>
+				{%- endfor %}
+				</ul>
+		{% endblock %}</div>
 
 		<div id='content'>
 			{% block content %}{% endblock %}
 		</div>
-
-		{% 
 	</body>
 </html>
