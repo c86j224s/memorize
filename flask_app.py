@@ -17,6 +17,16 @@ def about ():
 			('http://www.naver.com', 'Naver!'),
 			('http://www.daum.net', 'Daum!')))
 
+@app.route('/posts')
+def posts ():
+	# @todo get multiple posts from db
+	return render_template('post.html')
+
+@app.route('/post/<int:post_id>')
+def post (post_id):
+	# @todo get one post from db
+	return render_template('post.html')
+
 if __name__ == '__main__':
 	app.debug = True
 	app.run ()
